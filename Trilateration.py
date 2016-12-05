@@ -88,7 +88,7 @@ def trilaterationSolution(pt_a, pt_b, pt_c):
     y = math.sqrt(rad_1**2 - x**2)
 
     if(rad_3**2 == ( (x - q)**2 + (y - r)**2)):
-        print("d_3^2 = {}^2 = ({} - {})^2 + ({} - {}) ^ 2".format(rad_3 ,x , q, y, r))
+        print("d_3^2 = {}^2 = ({} - {})^2 + ({} - {})^2".format(rad_3 ,x , q, y, r))
         print("Radical Center Coordinates: ({}, {})".format(x, y))
 
     elif( rad_3**2 == ( (x - q)**2 + ((-y) - r)**2 ) ):
@@ -97,11 +97,11 @@ def trilaterationSolution(pt_a, pt_b, pt_c):
 
     else:
         print("d_3^2 = {}^2 = ({} - {})^2 + ({} - {}) ^ 2".format(rad_3 ,x , q, y, r))
-        print("{} = {} ^2 + {}^2".format(rad_3**2, x - q, y - r))
+        print("{} = {}^2 + {}^2".format(rad_3**2, x - q, y - r))
         print("{} =  {} \n".format(rad_3**2, (x - q)**2 + (y - r)**2))
 
-        print("d_3 ^ 2 = {}^2 = ({} - {})^2 + ({} - {}) ^ 2".format(rad_3 ,x , q, -y, r))
-        print("{} = {} ^2 + {}^2".format(rad_3**2, x - q, -y - r))
+        print("d_3^2 = {}^2 = ({} - {})^2 + ({} - {}) ^ 2".format(rad_3 ,x , q, -y, r))
+        print("{} = {}^2 + {}^2".format(rad_3**2, x - q, -y - r))
         print("{} =  {} \n".format(rad_3**2, (x - q)**2 + (-y - r)**2))
 
         print("Radical Center Coordinates: ({}, (+-){})".format(x, y))
