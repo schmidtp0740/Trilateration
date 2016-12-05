@@ -2,7 +2,6 @@ import math
 
 def trilaterationSolution(pt_a, pt_b, pt_c):
     #determine the coordinate at the origin
-    #determine the coordinate at the origin
     m = 0.0
     n = 0.0
     p = 0.0
@@ -12,6 +11,7 @@ def trilaterationSolution(pt_a, pt_b, pt_c):
     rad_1 = 0.0
     rad_2 = 0.0
     rad_3 = 0.0
+
     if float(pt_a[0]) == 0.0 and float(pt_a[1]) == 0.0:
         m = (float(pt_a[0]))
         n = (float(pt_a[1]))
@@ -85,25 +85,24 @@ def trilaterationSolution(pt_a, pt_b, pt_c):
 
 
     x = ( rad_1**2 - rad_2**2 + p**2 ) / ( 2*p )
-    y = math.sqrt(math.pow(rad_1, 2) - math.pow(x,2) )
+    y = math.sqrt(rad_1**2 - x**2)
 
-    if(math.pow(rad_3, 2) == ( math.pow( (x - q), 2) + math.pow((y - r), 2))):
-        print("d_3 ^ 2 = {}^2 = ({} - {})^2 + ({} - {}) ^ 2".format(rad_3 ,x , q, y, r))
+    if(rad_3**2 == ( (x - q)**2 + (y - r)**2)):
+        print("d_3^2 = {}^2 = ({} - {})^2 + ({} - {}) ^ 2".format(rad_3 ,x , q, y, r))
         print("Radical Center Coordinates: ({}, {})".format(x, y))
 
-    elif(math.pow(rad_3, 2) == ( math.pow((x - q), 2) + math.pow(( (-y) - r), 2))):
-        print("d_3 ^ 2 = {}^2 = ({} - {})^2 + ({} - {}) ^ 2".format(rad_3 ,x , q, -y, r))
-        print("Radical Center Coordinates: ({}, {})".format(x, y))
+    elif( rad_3**2 == ( (x - q)**2 + ((-y) - r)**2 ) ):
+        print("d_3^2 = {}^2 = ({} - {})^2 + ({} - {})^2".format(rad_3 ,x , q, -y, r))
+        print("Radical Center Coordinates: ({}, {})".format(x, -y))
 
     else:
-        print("d_3 ^ 2 = {}^2 = ({} - {})^2 + ( {} - {}) ^ 2".format(rad_3 ,x , q, y, r))
-        print(rad_3**2, ' = (', x-q,')^2 + (', y -r,')^2')
-        print(rad_3**2, ' = ', (x-q)**2 + (y-r)**2)
-        print("\n")
-        print("d_3 ^ 2 = {}^2 = ({} - {})^2 + ( -{} - {}) ^ 2".format(rad_3 ,x , q, y, r))
-        print(rad_3**2, ' = (', x-q,')^2 + (', -y -r,')^2')
-        print(rad_3**2, ' = ', (x-q)**2 + (-y-r)**2)
-        print("\n")
+        print("d_3^2 = {}^2 = ({} - {})^2 + ({} - {}) ^ 2".format(rad_3 ,x , q, y, r))
+        print("{} = {} ^2 + {}^2".format(rad_3**2, x - q, y - r))
+        print("{} =  {} \n".format(rad_3**2, (x - q)**2 + (y - r)**2))
+
+        print("d_3 ^ 2 = {}^2 = ({} - {})^2 + ({} - {}) ^ 2".format(rad_3 ,x , q, -y, r))
+        print("{} = {} ^2 + {}^2".format(rad_3**2, x - q, -y - r))
+        print("{} =  {} \n".format(rad_3**2, (x - q)**2 + (-y - r)**2))
 
         print("Radical Center Coordinates: ({}, (+-){})".format(x, y))
 
