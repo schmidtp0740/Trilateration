@@ -107,13 +107,13 @@ def trilaterationSolution(pt_a, pt_b, pt_c):
         print("Radical Center Coordinates: ({}, (+-){})".format(x, y))
 
 
-print("Enter the first coordinate (0, 0):x y radius")
-pt_a = input().split()
+print("Enter Point A's coordinates and radius:x, y, radius")
+pt_a = input().split(", ")
 
-print("Enter the second Coordinate(0, y):x y radius")
-pt_b = input().split()
+print("Enter Point B's coordinates and radius:x, y, radius")
+pt_b = input().split(", ")
 
-print("Enter the third Coordinate(x, y):x y radius")
-pt_c = input().split()
+print("Enter Point C's coordinates and radius:x, y, radius")
+pt_c = input().split(", ")
 
 trilaterationSolution(pt_a, pt_b, pt_c)
