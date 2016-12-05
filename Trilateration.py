@@ -1,7 +1,44 @@
 import math
 
 def trilaterationSolution(pt_a, pt_b, pt_c):
-    #determine the coordinate at the origin
+    """Calculates the intersection of the 3 circles and prints
+    the equation used to show the intersection of the three circles
+    and the approximate value of the radical center.
+
+    Args:
+        three sets of coordinates and their respective radii.
+    """
+    m, n, p, s, q, r, rad_1, rad_2, rad_3 = AssignCoordinates(pt_a, pt_b, pt_c)
+
+    x = ( rad_1**2 - rad_2**2 + p**2 ) / ( 2*p )
+    y = math.sqrt(rad_1**2 - x**2)
+
+    if(rad_3**2 == ( (x - q)**2 + (y - r)**2)):
+        print("d_3^2 = {}^2 = ({} - {})^2 + ({} - {})^2".format(rad_3 ,x , q, y, r))
+        print("Radical Center Coordinates: ({}, {})".format(x, y))
+
+    elif( rad_3**2 == ( (x - q)**2 + ((-y) - r)**2 ) ):
+        print("d_3^2 = {}^2 = ({} - {})^2 + ({} - {})^2".format(rad_3 ,x , q, -y, r))
+        print("Radical Center Coordinates: ({}, {})".format(x, -y))
+
+    else:
+        print("d_3^2 = {}^2 = ({} - {})^2 + ({} - {}) ^ 2".format(rad_3 ,x , q, y, r))
+        print("{} = {}^2 + {}^2".format(rad_3**2, x - q, y - r))
+        print("{} =  {} \n".format(rad_3**2, (x - q)**2 + (y - r)**2))
+
+        print("d_3^2 = {}^2 = ({} - {})^2 + ({} - {}) ^ 2".format(rad_3 ,x , q, -y, r))
+        print("{} = {}^2 + {}^2".format(rad_3**2, x - q, -y - r))
+        print("{} =  {} \n".format(rad_3**2, (x - q)**2 + (-y - r)**2))
+
+        print("Radical Center Coordinates: ({}, (+-){})".format(x, y))
+
+def AssignCoordinates(pt_a, pt_b, pt_c):
+    """Calculates which of the three points is the origin point and then
+    assigns the remaining points
+
+    Args:
+        three sets of coordinates and their respective radii
+    """
     m = 0.0
     n = 0.0
     p = 0.0
@@ -83,29 +120,7 @@ def trilaterationSolution(pt_a, pt_b, pt_c):
             r = (float(pt_b[1]))
             rad_3 = (float(pt_b[2]))
 
-
-    x = ( rad_1**2 - rad_2**2 + p**2 ) / ( 2*p )
-    y = math.sqrt(rad_1**2 - x**2)
-
-    if(rad_3**2 == ( (x - q)**2 + (y - r)**2)):
-        print("d_3^2 = {}^2 = ({} - {})^2 + ({} - {})^2".format(rad_3 ,x , q, y, r))
-        print("Radical Center Coordinates: ({}, {})".format(x, y))
-
-    elif( rad_3**2 == ( (x - q)**2 + ((-y) - r)**2 ) ):
-        print("d_3^2 = {}^2 = ({} - {})^2 + ({} - {})^2".format(rad_3 ,x , q, -y, r))
-        print("Radical Center Coordinates: ({}, {})".format(x, -y))
-
-    else:
-        print("d_3^2 = {}^2 = ({} - {})^2 + ({} - {}) ^ 2".format(rad_3 ,x , q, y, r))
-        print("{} = {}^2 + {}^2".format(rad_3**2, x - q, y - r))
-        print("{} =  {} \n".format(rad_3**2, (x - q)**2 + (y - r)**2))
-
-        print("d_3^2 = {}^2 = ({} - {})^2 + ({} - {}) ^ 2".format(rad_3 ,x , q, -y, r))
-        print("{} = {}^2 + {}^2".format(rad_3**2, x - q, -y - r))
-        print("{} =  {} \n".format(rad_3**2, (x - q)**2 + (-y - r)**2))
-
-        print("Radical Center Coordinates: ({}, (+-){})".format(x, y))
-
+    return m, n, p, s, q, r, rad_1, rad_2, rad_3
 
 print("Enter Point A's coordinates and radius:x, y, radius")
 pt_a = input().split(", ")
