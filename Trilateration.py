@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import math
 
 def trilaterationSolution(pt_a, pt_b, pt_c):
@@ -31,6 +32,7 @@ def trilaterationSolution(pt_a, pt_b, pt_c):
         print("{} =  {} \n".format(rad_3**2, (x - q)**2 + (-y - r)**2))
 
         print("Radical Center Coordinates: ({}, (+-){})".format(x, y))
+
 
 def AssignCoordinates(pt_a, pt_b, pt_c):
     """Calculates which of the three points is the origin point and then
@@ -121,6 +123,7 @@ def AssignCoordinates(pt_a, pt_b, pt_c):
             rad_3 = (float(pt_b[2]))
 
     return m, n, p, s, q, r, rad_1, rad_2, rad_3
+
 
 print("Enter Point A's coordinates and radius:x, y, radius")
 pt_a = input().split(", ")
